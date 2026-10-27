@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+.Toastify__toast {
+  font-family: "Outfit", sans-serif; 
+}
+
+/* ==========================================
+   TAILWIND v4 THEME — GlitzByLissah
+   Custom colors, shadows, and background tokens
+   ========================================== */
+@theme {
+  /* Cream palette */
+  --color-cream: #FBF8F3;
+  --color-cream-soft: #FDFCF9;
+  --color-cream-deep: #F5EFE3;
+
+  /* Gold palette */
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8C766;
+
+  /* Warm amber-tinted shadows */
+  --shadow-warm-sm: 0 2px 12px -2px rgba(180, 140, 60, 0.06);
+  --shadow-warm: 0 4px 20px -4px rgba(180, 140, 60, 0.08);
+  --shadow-warm-lg: 0 12px 40px -8px rgba(180, 140, 60, 0.12);
+  --shadow-warm-xl: 0 20px 60px -12px rgba(180, 140, 60, 0.15);
+}
+
+/* ==========================================
+   BASE — Global resets + page background
+   ========================================== */
+html {
+  background-color: #FBF8F3;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: #FBF8F3;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Soft gold scrollbar */
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  border: 2px solid #FBF8F3;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.55);
+} */
+
+/* ==========================================
+   AMBIENT BACKGROUND
+   Multi-layer radial gradient on cream base.
+   Used by <PageBackground /> component.
+   ========================================== */
+.bg-ambient-cream {
+  background-color: #FBF8F3;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 0% 0%, rgba(212, 175, 55, 0.07), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(245, 200, 90, 0.06), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(212, 175, 55, 0.04), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(245, 200, 90, 0.04), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* ==========================================
+   COMPONENT UTILITIES
+   Reusable section + card patterns
+   ========================================== */
+@layer components {
+  /* Section rhythm */
+  .section-cream {
+    background-color: transparent; /* lets ambient show through */
+  }
+
+  .section-white {
+    background-color: #ffffff;
+  }
+
+  .section-fade {
+    background: linear-gradient(180deg, rgba(251, 248, 243, 0) 0%, #FFFFFF 100%);
+  }
+
+  /* Warm card — replaces "bg-white shadow-sm" pattern */
+  .card-warm {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-warm);
+    border: 1px solid rgba(212, 175, 55, 0.06);
+  }
+
+  /* Gold hairline divider */
+  .divider-gold {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.25), transparent);
+  }
+
+  /* Frosted panel — for section headers, navbars */
+  .panel-frosted {
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+}
